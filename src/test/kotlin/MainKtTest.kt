@@ -35,7 +35,7 @@ class MainKtTest {
         var total = toPay(pay = pay, previousTransfers = previousTransfers, card = card)
 
         assertEquals(
-            "Вы переводите 1500500 , у вас карта: Maestro : 11253.75",
+            "Вы переводите 35 , у вас карта: MasterCard : Комиссия 35 Рублей",
             total
         )
     }
@@ -53,7 +53,7 @@ class MainKtTest {
         var total = toPay(pay = pay, previousTransfers = previousTransfers, card = card)
 
         assertEquals(
-            "Вы переводите 1500500 , у вас карта: Maestro : 11253.75",
+            "Вы переводите 7500001 , у вас карта: Мир : Вы превысили суточный лимит ",
             total
         )
     }
@@ -71,7 +71,7 @@ class MainKtTest {
         var total = toPay(pay = pay, previousTransfers = previousTransfers, card = card)
 
         assertEquals(
-            "Вы переводите 1500500 , у вас карта: Maestro : 11253.75",
+            "Вы переводите 7500001 , у вас карта: Visa : Вы превысили суточный лимит ",
             total
         )
     }
@@ -89,7 +89,7 @@ class MainKtTest {
         var total = toPay(pay = pay, previousTransfers = previousTransfers, card = card)
 
         assertEquals(
-            "Вы переводите 1500500 , у вас карта: Maestro : 11253.75",
+            "Вы переводите 15005 , у вас карта: VK Pay : У вас нет комиссии  ",
             total
         )
     }
@@ -107,7 +107,7 @@ class MainKtTest {
         var total = toPay(pay = pay, previousTransfers = previousTransfers, card = card)
 
         assertEquals(
-            "Вы переводите 1500500 , у вас карта: Maestro : 11253.75",
+            "Вы переводите 15000000 , у вас карта: VK Pay : Вы превысили суточный лимит  ",
             total
         )
     }
@@ -171,7 +171,7 @@ class MainKtTest {
         var check = 0
         var total = toPayMasterCardAndMaestro(pay, check)
         assertEquals(
-            "999",
+            "ваша комиссия 44980.06",
             total
         )
 
@@ -191,7 +191,7 @@ class MainKtTest {
         var total = toPay(pay = pay, previousTransfers = previousTransfers, card = card)
 
         assertEquals(
-            "Вы переводите 1500500 , у вас карта: Maestro : 11253.75",
+            "Вы переводите 43256658 , у вас карта: Visa : Вы превысили суточный лимит ",
             total
         )
     }
@@ -202,11 +202,12 @@ class MainKtTest {
 
         var total = payCommission(pay)
         assertEquals(
-            "888",
+            100.0,
             total
         )
 
     }
 
 
+}
 }
